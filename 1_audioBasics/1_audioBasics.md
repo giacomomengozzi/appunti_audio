@@ -78,11 +78,73 @@ La differenza tra il livello di picco di un segnale e il suo livello medio è de
 > Il dynamic range è la differenza tra i picchi e i livelli minimi.
 >
 
+Il concetto dei valori di picco e medi si applica anche agli amplificatori. Infatti alcuni amplificatori possono mostrare un output anche il doppio del massimo rated per piccoli periodi di tempo proprio per fare suonare i picchi.
+Infatti un altro dato per gli amplificatori è il peak power output che e' molto più alto dei valori di potenza media che possono dare e prima del 1974 (quando è uscita una legge) i produttori pubblicizzavano soprattutto i valori di picco scammando la gente.
+
 ## Calcolare i decibel
 
+Ricorda che con solo dei voltaggi non puoi sapere il volume SPL (per quello ti serve la resistenza che poi usi per calcolare la potenza e quindi il volume) ma con una differenza di voltaggi puoi ricavare l'aumento (diminuzione) dei decibel:
+ad esempio se aumento 2 volte il voltaggio so che avrò sicuramente un aumento di 6dB SPL del suono (non ho bisogno di conoscere la resistenza per dirlo).
 
+Le formule precise sono queste:
 
+$ dB\ tra\ voltaggi = 20 * log_{10}(\frac{V_{2}}{V_1}) $
 
+## Frequenze
 
+Si misurano in Hertz (`Hz`).
+Ogni nota ha la sua frequenza. Raddioppiando la frequenza la nota passa all'ottava superiore. Essendoci 12 note in un ottava, per ottenere la frequenza della nota successiva di una nota devo moltiplicare per $\sqrt[12]{2}$
 
+> [!NOTE]
+> overtones = harmonics = partials
 
+### Graphing Audio
+
+Il volume (dB) è espresso linearmente e le frequenze sono espresse in modo logaritmico, infatti il grafico è un `semi-log`.
+Però, dato che in realtà i dB sono intrinsecamente logaritmici, se fossero espressi in volts allora sarebbero da esprimere logaritmicamente e quindi avrei un grafico log-log.
+
+![semi-log audio graph](./semilog.png)
+
+In questo grafico, la distanza tra 20 e 40 Hz è la stessa che c'è tra 200 e 400 Hz infatti in entrambi gli intervalli ci sono 12 note.
+La stessa cosa tra 20 Hz - 200 Hz e 200 Hz - 2000Hz (ho moltiplicato x10 in entrambi i casi e quindi cii sono le stesse note).
+
+## Filtri
+
+Un filtro audio è un dispositivo che selettivamente passa o sopprime un range di frequenze.
+Un filtro molto amato dagli audiofili è l'equalizzatore (anche se in generale sono più complessi dei filtri basic di cui sono composti).
+Ci sono 5 tipi base di filtri. Apparte la frequenza di cutoff i filtri high-pass e low-pass hanno anche la proprietà di decadimento del suono chiamata `slope`, specificata in dB per ottava.
+Il `cutoff` è la frequenza in cui la response scende di 3 dB.
+
+* [High-Pass] - fa passare le frequenze sopra al cutoff;
+* [Low-Pass] - fa passare le frequenze sotto al cutoff;
+* [Band-Pass] - fa passare le frequenze attorno la freq centro scelta;
+* [Band-Stop] - fa passare tutte le frequenze apparte un range attorno la freq scelta.
+
+![High-Pass filter](./highpass.png)
+In questo caso la frequenza di cutoff dell'high-pass è a 125 Hz. La slope è 6 dB per ottava.
+
+La maggior parte dei filtri non taglia completamente le frequenze che non fa passare. Hanno un limite sul massimo boost o taglio di frequenze (non puoi mandare delle frequenze a 0 dB).
+Quando tagli o boosti il range di frequenze sopra o sotto la frequenza di cutoff si dice `shelving` perchè in effetti fanno quella forma lì i filtri.
+I filtri shelf non continuano ad "andare giù" dopo il cutoff:
+
+![Shelf filter](./shelf.png)
+
+Un altro parametro importante dei filtri è il parametro `Q` (_quality_).
+L'interpretazione di Q varia da filtro a filtro. Di solito sono riferiti a filtri Band-Pass. In questo caso se Q è minore di 1 (e maggiore di 0) la campana è molto schiacciata (il filtro si sente molto di più perché coinvolge molte più frequenze), invece se Q è maggiore di 1 la campana diventa molto appuntita.
+
+AKSHUALLY Q viene da un calcolo abbastanza semplice spiegato nell'immagine sotto.
+
+![Calcolo di Q](./q.png)
+
+> Applying a high Q to a low-pass filter is the basis for analog synthesizer
+> filters, as made famous by early Moog models. For example, the low-pass filter in
+> a MiniMoog has a slope of 24 dB per octave; the sharp slope coupled with a
+> resonant peak at the cutoff frequency creates its characteristic sound.
+
+## Phase Shift and Time Delay
+
+AKSHUALLY esiste anche un altro tipo di filtro: il all-pass filter... ma che senso ha?
+Beh ecco, serve ad applicare dello sfasamento di fase (`phase shift`) (non cambia freq).
+E cos'è ti chiedi? Dai è quell'effetto tipo chorus (?). Può anche essere usato per creare un suono stereo artificiale. È simile al `flanger` effect (usa del time delay invece che phase shift (che mi sembra essere praticamente la stessa cosa*)).
+
+*AKSHUALLY non sono la stessa cosa: il time delay shifta tutte le frequenze allo stesso modo, il phase shift invece delaya alcune frequenze più di altre.

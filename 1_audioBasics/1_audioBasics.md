@@ -156,7 +156,30 @@ Quando combini un audio con la sua versione passata ad un all-pass filter cambia
 > [!NOTE]
 > BTW questo e' il principio di base di funzionamento degli equalizzatori analogici
 
-:w
+Un all-pass filter può anche essere usato per creare un effetto pseudo-stereo, funziona così:
+prendi il segnale audio _x_, e passalo prendendo un all-pass filter e ottieni _y_.
+Nel canale destro mettici _x-y_, nel sinistro mettici _x+y_.
+Nelle frequenze in cui le frequenze shiftate annullano le normali x si ha che il canale sinistro (_x+y_) suona più piano mentre il destro invece più forte.
+Fai finta che a 200Hz si annullerebbero le normali, a 500Hz invece si sommano le normali, a 1kHz si annullano di nuovo, ... ottengo che
 
+|  | Left | Right |
+| --------------- | --------------- | --------------- |
+| 200Hz | forte | debole |
+| 500Hz | debole | forte |
+| 1kHz | forte | debole |
+| 2kHz | debole | forte |
+| 5kHz | forte | debole |
+
+E così freghi il tuo cervello a pensare che tipo la chitarra è a destra e la voce a sinistra.
+In ogni canale si crea un cosiddetto `comb filter` (somma (sottrazione) del segnale originale con quello shiftato) perchè il grafico delle frequenze sembra un pettine (dove sono contrarie si annullano altrimenti si sommano)
+
+![Stereo synth](./fakestereo.png) Polarity reversal = invertire il voltaggio
+
+Un'altra piccola figatina per fare un effetto fakestereo è prendere il segnale audio _x_, creare due audio shiftati (diversamente) _y_ e _z_ e mettere _y_ nel canale sinistro e _z_ nel destro.
+In questo caso non si altera la frequency response e si crea tantissima width e dimensione.
+Tra l'altro se la quantità di phase shift viene modulata nel tempo si produce un suono simile a un `Leslie rotating speaker` (quello dell'organo hammond per intenderci).
+BTW il Leslie speaker usa l'effetto Doppler! Che alla fine è proprio quello che vai a ricreare facendo phase shift.
+
+Anche i primi eq digitali sfruttavano una specie di phasing. Vedi paragrafo p.54 se ti interessa.
 
 

@@ -70,11 +70,11 @@ Ma non ti dicono i valori precisi di picco (se non aggiungi altri strumenti di s
 
 Gli strumenti digitali ti possono anche mostrare contemporaneamente i valori di picco e average e poi possono anche mostrarti il valore di picco piu' alto raggiunto. Così se mentre registri non te ne sei accorto lo vedi dopo il picco più alto raggiunto.
 
-La differenza tra il livello di picco di un segnale e il suo livello medio è detto `crest factor`.
+La differenza tra il livello di picco di un segnale e il suo livello medio è detto `crest factor`. Ti dice quanto estremi sono i picchi. Un crest factor di 1 vuol dire che non ci sono picchi.
 
 > [!WARNING]
 > non confondere crest factor e dynamic range.
-> Il crest factor è la differenza tra i picchi e i livelli medi (per i valori medi si prende l'RMS).
+> Il crest factor è il rapporto tra i picchi e i livelli medi (per i valori medi si prende l'RMS).
 > Il dynamic range è la differenza tra i picchi e i livelli minimi.
 >
 
@@ -148,3 +148,15 @@ Beh ecco, serve ad applicare dello sfasamento di fase (`phase shift`) (non cambi
 E cos'è ti chiedi? Dai è quell'effetto tipo chorus (?). Può anche essere usato per creare un suono stereo artificiale. È simile al `flanger` effect (usa del time delay invece che phase shift (che mi sembra essere praticamente la stessa cosa*)).
 
 *AKSHUALLY non sono la stessa cosa: il time delay shifta tutte le frequenze allo stesso modo, il phase shift invece delaya alcune frequenze più di altre.
+
+La frequenza di centro di un all-pass filter e' definita come la frequenza in cui il phase shift e' di 90 gradi (infatti schifta ogni frequenza di una quantita' di gradi diversa), ossia i picchi di quella frequenza corrispondono a quando quella stessa frequenza a 0 se non fosse stata shiftata.
+
+Quando combini un audio con la sua versione passata ad un all-pass filter cambia la frequency response. Infatti a seconda delle frequenze le onde possono sommarsi oppure cancellarsi (parzialmente o totalmente).
+
+> [!NOTE]
+> BTW questo e' il principio di base di funzionamento degli equalizzatori analogici
+
+:w
+
+
+

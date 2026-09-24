@@ -180,6 +180,46 @@ In questo caso non si altera la frequency response e si crea tantissima width e 
 Tra l'altro se la quantità di phase shift viene modulata nel tempo si produce un suono simile a un `Leslie rotating speaker` (quello dell'organo hammond per intenderci).
 BTW il Leslie speaker usa l'effetto Doppler! Che alla fine è proprio quello che vai a ricreare facendo phase shift.
 
-Anche i primi eq digitali sfruttavano una specie di phasing. Vedi paragrafo p.54 se ti interessa.
+Anche i primi eq digitali sfruttavano una specie di phasing. È interessante vedere come si faceva il phasing digitale: Si usava una `digital delay line`.
+Una digital delay line è una serie di indirizzi di memoria in cui passa l'audio.
+Il primo sample della traccia audio (in una traccia a 44.100Hz ci sono 44100 sample al secondo) viene caricato nell'indirizzo di memoria 0 (relativo), poi quando arriva il secondo, il primo viene shiftato nella posizione 1 e al suo posto viene messo il secondo.
+Ogni volta che arriva un nuovo sample gli altri shiftano fino ad arrivare all'output.
+A 44,1 kHz arriva un nuovo campione ogni: 1/44100≈22,68 μs
+Il trucco sta nel prendere il segnale originale e combinarlo con il segnale della digital delay line tipo all'indirizzo 5 (ad esempio), che quindi è lo stesso audio ma shiftato (più vecchio) di 5*22,68=113.4μs.
+Puoi combinare i segnali anche senza fare una 'miscela' 50 e 50 ma anche un 20 e 80 e poi puoi anche invertire la polarità così magari hai un fenomeno costruttivo e aumenti delle frequenze invece che abbassarle.
+Controllando l'indirizzo di memoria a cui arrivi nella digital delay line per prelevare i sample shiftati (più vai in là con gli indirizzi più è shiftato (obv)), e quanto il segnale delayato è dato nuovamente in input e se con polarità invertita si crea un equalizzatore digitale!
 
+Infine (non spiega come) il phase shifting può anche essere usato per diminuire i picchi in una traccia audio senza diminuire l'audio in generale, così da permettere alla traccia audio di essere trasmessa a volume medio maggiore senza clippare e senza il bisogno di un limiter.
+
+### Due robette in più sul Comb Filtering
+
+Bellissimo video: [https://www.youtube.com/watch?v=0wvlrbx3u4ch]
+
+In pratica è un problema molto reale.
+Ricorda che accade quando si mescolano tra loro due segnali audio identici ma uno un po' shiftato rispetto all'altro. Avvengono delle cancellazioni importanti che possono cambiare anche drasticamente il suono.
+* Il fenomeno accade anche quando ascolti in una stanza non trattata in cui lo stesso suono rimbalza sulle pareti e ti raggiunge un po' shiftato rispetto al suono diretto che parte dagli speaker.
+* Ma basta anche se non ti metti alla stessa distanza tra gli speaker quando li ascolti. Dovresti essere equidistanziato da tutti gli speaker per un ascolto ottimale.
+
+* Poi c'è la regola 3:1 per registrare gli strumenti
+![Regola 3 a 1](./31rule.png)
+
+Lo stesso strumento 'bleeda' anche nell'altro microfono oltre che a quello dedicato.
+Se queste distanze avessero un rapporto minore del 3:1 allora il bleeding creerebbe del comb filtering nel mix finale.
+
+Il problema del comb filtering è più accentuato se i due segnali (di cui uno ritardato) sono mixati insieme 50 e 50 (si ha distruzione massima). A 50 e 50 le frequenze che si cancellano, si cancellano praticamente del tutto, invece quelle che si sommano si sommano di al massimo 6dB (hai capito perché).
+Non importa (finchè non è grandissimo) quanto è grande lo shift, alcune frequenze (diverse con shift diversi) verranno sempre cancellate.
+
+* Il problema esiste anche nei DAW:
+![Comb filtering nei DAW](./flanging.png)
+Infatti se prendi dell'audio e vuoi mixare la versione dry con una con sopra un effetto puoi avere comb filtering. Infatti per avere l'effetto vengono fatti dei calcoli che fanno si che l'audio modificato arrivi più lentamente di quello dry e quindi arriva shiftato. Il mix può produrre anche gravi cancellamenti.
+Fortunatamente i DAWs sono intelligenti e per ovviare a questo problema ritardano dello stesso tempo che richiede l'effetto anche tutte le altre traccie (così è come se l'effetto non richiedesse tempo) e così sono tutti sincronizzati.
+
+Tipicamente per avere un effetto Comb Filter devi avere un delay di qualche millisecondo (da 2 a 20 tipo).
+Per altre cose interessanti guarda quel video.
+
+Questo effetto a volte è attenuato dalle nostre orecchie perchè magari una sente un comb filtering modesto mentre l'altra invece sente abbastanza bene e quindi il mixing di questi suoni non è gravissimo. Ecco perchè si sente meglio se lo registri con un unico microfono (ad esempio mettendolo a distanza leggermente diversa dai due speaker).
+
+BTW È un fenomeno che si applica a moltissimi altri fenomeni fisici che coinvolgono onde di vario genere, non solo audio (esempio microonde, onde radio, ...).
+
+## Fast Fourier Transform
 

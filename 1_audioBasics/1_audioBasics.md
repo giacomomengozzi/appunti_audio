@@ -108,6 +108,8 @@ Però, dato che in realtà i dB sono intrinsecamente logaritmici, se fossero esp
 In questo grafico, la distanza tra 20 e 40 Hz è la stessa che c'è tra 200 e 400 Hz infatti in entrambi gli intervalli ci sono 12 note.
 La stessa cosa tra 20 Hz - 200 Hz e 200 Hz - 2000Hz (ho moltiplicato x10 in entrambi i casi e quindi cii sono le stesse note).
 
+---
+
 ## Filtri
 
 Un filtro audio è un dispositivo che selettivamente passa o sopprime un range di frequenze.
@@ -221,5 +223,28 @@ Questo effetto a volte è attenuato dalle nostre orecchie perchè magari una sen
 
 BTW È un fenomeno che si applica a moltissimi altri fenomeni fisici che coinvolgono onde di vario genere, non solo audio (esempio microonde, onde radio, ...).
 
+---
+
 ## Fast Fourier Transform
+
+Joseph Fourier (1768-1830) mostrò che tutti i suoni possono essere rappresentati da una o più sine waves a diverse frequenze, ampiezze, durate e sfasamenti.
+Quindi, preso un suono, posso scomporlo in tutte le sue parti usando la trasformata di fourier veloce (`FFT`).
+La FFT è uno strumento utilissimo perchè ti permette di constatare le frequenze che compongono ogni suono, ad esempio per capire anche quanto _noise_ e _distorsion_ vengono aggiunte da un amplificatore o una sound card.
+
+Ad esempio questa è la trasformata di fourier di un seno puro a 1kHz che passa per una cheap sound card:
+![FFT cheap sound card](./FFT.png)
+Si nota ovviamente il seno a 1kHz ma anche tutto il noise introdotto dalla sound card.
+Ci sono dei picchi agli "odd-number harmonic distortion frequencies" of 3, 5, 7, and 9 KHz.
+Da notare anche la discesa a 0Hz sull'estrema sinistra del grafico che indica che la sound card ha introdotto anche un `DC offset`.
+Di solito puoi regolare la risoluzione della scomposizione di FFT. Si consiglia una alta risoluzione.
+
+## Seni, Onde Quadre e Pink Noise!
+
+Anche le onde quadre e sawtooth possono essere riprodotte a partire da seni!
+
+> [!NOTE]
+> Un onda seno contiene una singola frequenza quindi è una buona scelta per misurare la distorsione armonica nell'audio gear.
+> Mandi una singola frequenza nell'amplificatore o un altro dispositivo che stai testando, qualsiasi frequenza in più in output deve essere stata aggiunta dal dispositivo.
+
+* Le onde `triangolari` contengono solo armoniche (seni puri) dispari: se il pitch fondamentale è a 100Hz, l'onda contiene anche 300Hz, 500Hz, 700Hz e così via. Ogni armonica successiva è anche più bassa della precedente.
 

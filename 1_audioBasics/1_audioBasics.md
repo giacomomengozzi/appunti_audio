@@ -42,7 +42,8 @@ Obsoleto, si usava anche il `dBm` che fissa a 0dBm 1 milliwatt.
 
 Poi c'è il `dBV` in cui 0 dBV corrispondono a 1 volt. L'offset di 0.225 volt tra dBV e dBu da si che lo stesso numero in dBV e dBu abbia una differenza di 2.21 dB.
 
-Per l'audio digitale si ha il `dBFS` dove FS sta per Full Scale. 0 dBFD è il piu' grande numero digitale che una sound card o analog digital converter può accettare in input/dare in output (infatti si misurano con i numeri negativi).
+Per l'audio digitale si ha il `dBFS` dove FS sta per Full Scale. 0 dBFS è il piu' grande numero digitale che una sound card o analog digital converter può accettare in input/dare in output (infatti si misurano con i numeri negativi).
+(dB - "5cm in meno" (relativo); dBFS (dBV, dBu, ...) - "5cm!" (assoluto)
 
 Poi c'è la differenza tra il livello di picco e il medio in un segnale digitale (pensa al segnale elettrico che passa nel cavo delle cuffie o in quello di un diffusore, li' la corrente e' alternata, la ddf cambia continuamente tra diversi voltaggi, è il voltaggio che cambia che fa muovere la membrana che poi sposta l'aria).
 Questo si chiama livello `RMS`. Diciamo che misura matematicamente l'energia media del segnale.
@@ -53,7 +54,6 @@ Questo si chiama livello `RMS`. Diciamo che misura matematicamente l'energia med
 Per calcolare la loudness e i livelli di picco prendi tutti i valori assoluti ovviamente (perchè i volt che passano nei fili delle cuffie possono anche essere negativi (fanno muovere la membrana dall'altra parte))
 
 ## Livelli di segnale e Metering
-
 Gli strumenti di misurazione dei livelli audio sono importantissimi per la registrazione e il mixing perchè ogni recording medium (analog tape, ...) ha un range di livelli di volume che puo' supportare.
 Infatti se registrando in analog tape l'audio è registrato troppo piano poi senti un hiss quando lo senti, invece se lo registri troppo forte viene distorto.
 Uno dei primi strumenti di misurazione volume audio era il `VU meter` (VU = volume units).
@@ -246,5 +246,56 @@ Anche le onde quadre e sawtooth possono essere riprodotte a partire da seni!
 > Un onda seno contiene una singola frequenza quindi è una buona scelta per misurare la distorsione armonica nell'audio gear.
 > Mandi una singola frequenza nell'amplificatore o un altro dispositivo che stai testando, qualsiasi frequenza in più in output deve essere stata aggiunta dal dispositivo.
 
+![Onde](./waves.png)
+
 * Le onde `triangolari` contengono solo armoniche (seni puri) dispari: se il pitch fondamentale è a 100Hz, l'onda contiene anche 300Hz, 500Hz, 700Hz e così via. Ogni armonica successiva è anche più bassa della precedente.
+![Triangle Wave FFT](./trianglewave.png)
+Questa è un onda triangolare con livello di picco di -1 dBFS (1dB sotto la Full Scale). Nota che la fondamentale arriva solo a -12 che è molto inferiore a -1dBFS. Questo è perchè l'energia totale è data dalla somma di tutte le armoniche.
+
+* Le `Sawtooth` invece hanno sia armoniche pari che dispari (100, 200, 300, ...). Le sawtooth avendo armoniche sia pari che dispari non sono simmetriche.
+
+* Le `Quadre` hanno anch'esse solo armoniche dispari. Nota che le triangolari e le quadre hanno solo dispari perchè sono simmetriche, la forma dell'onda va su e poi va giù allo stesso modo.
+![Square Wave FFT](./squarewave.png)
+Nota che i livelli (volume) di ogni armonica sono più alti della triangolare perchè la forma dell'onda è molto più ripida (praticamente è verticale nell'onda quadra). Infatti "_The faster a waveform rises or falls (called its `rise time`) the more high-frequency components it contains_".
+Questo principio si applica ad ogni forma d'onda.
+
+* Le `Pulse` sono un sovra-insieme delle onde quadre. Hanno una proprietà ulteriore che si chiama `pulse width`. Per esempio una pulse wave che è positiva un decimo delle volte e zero (o negativa) il resto, si dice che ha un pulse width del 10%.
+
+> [!NOTE]
+> Quindi un onda quadra non è altro che una pulse con pulse width 50% (ha per metà del tempo voltaggio positivo e per l'altra metà zero (o negativo)).
+
+> [!NOTE]
+> Il pulse width è strettamente correlato con il crest factor (differenza tra picchi e livelli medi).
+> Quando si riduce il pulse width sotto il 50% i peak rimangono gli stessi ma cambia il livello medio (che rappresenta la quantità totale dell'energia) che diminuisce (quindi il crest factor aumenta).
+
+Qualsiasi suono contiene dei seni, quindi anche i suoni degli strumenti musicali possono essere ricreati (sintetizzati) a partire da seni.
+Puoi anche sintetizzare suoni con armoniche che non si trovano in natura, come ad esempio un suono che ha delle armoniche che a basso volume nei medi e poi si rialzano nelle alte frequenze.
+
+### Distorsione dall'audio gear
+
+Proprio come gli strumenti musicali creano i suoni aggiungendo delle armoniche alle fondamentali così fanno anche i circuiti audio creando `distorsione`.
+Alcuni circuiti di amplificatori tendono a creare più armoniche dispari rispetto alle pari, e altri ne fanno di entrambi i tipi.
+Vedi l'esempio della distorsione quelche foto più in su. In questo esempio ovviamente in output non vedo un onda quadra (frequenze dispari accentuate) perchè comunque le armoniche sono bassissimissime, però non è nemmeno un seno super sinuoso ecco (l'orecchio tanto nemmeno se ne accorge).
+
+### Eccezione alla numericamente sequenziale serie armonica
+
+Si tratta dei suoni di campane, _chimes_ e altre percussioni come le _steel drums_.
+![Bell D FFT](./bellFFT.png)
+Questa decomposizione FFT mostra una campana tubolare accordata su un Re (D).
+Anche se è accordata su un Re e suona come un Re, solo due armoniche (1,175Hz e 2,349Hz) tra le 5 maggiori (che si vedono) sono relative alla fondamentale o ad altre armoniche di un Re.
+
+Il contenuto armonico dei piatti (cymbals) è ancora più complesso e denso.
+
+### Distorsione Intermodulare
+
+Una delle differenze tra le armoniche introdotte dagli strumenti musicali e quelle introdotte dai circuiti audio è ache i circuiti aggiungono anche delle componenti non armoniche chiamate `intermodulation distortion` (IMD) (Distorsione intermodulare).
+Questa distorsione funziona creando frequenze date per somma e differenza quando più di una frequenza è presente in input, per esempio: se un audio contiene un La (440Hz) e un Si sopra (494Hz) i circuiti audio introdurranno delle armoniche riferite a 440Hz e poi altre riferite a 494Hz ma, ancora, anche una serie relativa alla somma 440+494= 934Hz e una alla differenza 494-440= 54Hz tra le due frequenze primarie.
+La distorsione è inevitabile in qualsiasi cirucito audio. Gli ingegneri mirano a limitare la distorsione e renderla in-udibile.
+
+![IMD](./imd.png)
+
+
+
+
+
 

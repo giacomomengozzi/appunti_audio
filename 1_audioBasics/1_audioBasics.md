@@ -1,7 +1,7 @@
 # Audio Basics
 Parliamo di cose oggettive, numeri!
 
-## Volume e decibels
+## 1. Volume e decibels
 
 Il volume di una canzone (un suono) o sound pressure level (SPL) si misura in `decibel`.
 Si misura quindi un cambiamento della pressione dell'aria che si propaga fino ai timpani, facendoli vibrare.
@@ -26,7 +26,7 @@ A noi per sembrarci di avere raddoppiato il volume di una canzone ci bastano 8-1
 Infatti siamo più sensibili ai cambiamenti di volume tra le frequenze medie, invece poco negli alti/bassi.
 Anche la stanza in cui si ascolta influenza il modo in cui sentiamo un cambiamento di volume: in una stanza non trattata con molti echo sarà sicuramente più difficile sentire una differenza di mezzo decibel.
 
-## Livelli Standard di Segnale (p33)
+## 2. Livelli Standard di Segnale (p33)
 
 Anche nei componenti elettronici che trasportano segnali audio si usano i decibel.
 Un amplificatore che raddoppia il segnale in output si dice che ha un gain di 6dB (nota che non importa il valore di volt che ha in ingresso).
@@ -53,7 +53,7 @@ Questo si chiama livello `RMS`. Diciamo che misura matematicamente l'energia med
 
 Per calcolare la loudness e i livelli di picco prendi tutti i valori assoluti ovviamente (perchè i volt che passano nei fili delle cuffie possono anche essere negativi (fanno muovere la membrana dall'altra parte))
 
-## Livelli di segnale e Metering
+## 3. Livelli di segnale e Metering
 Gli strumenti di misurazione dei livelli audio sono importantissimi per la registrazione e il mixing perchè ogni recording medium (analog tape, ...) ha un range di livelli di volume che puo' supportare.
 Infatti se registrando in analog tape l'audio è registrato troppo piano poi senti un hiss quando lo senti, invece se lo registri troppo forte viene distorto.
 Uno dei primi strumenti di misurazione volume audio era il `VU meter` (VU = volume units).
@@ -81,7 +81,7 @@ La differenza tra il livello di picco di un segnale e il suo livello medio è de
 Il concetto dei valori di picco e medi si applica anche agli amplificatori. Infatti alcuni amplificatori possono mostrare un output anche il doppio del massimo rated per piccoli periodi di tempo proprio per fare suonare i picchi.
 Infatti un altro dato per gli amplificatori è il peak power output che e' molto più alto dei valori di potenza media che possono dare e prima del 1974 (quando è uscita una legge) i produttori pubblicizzavano soprattutto i valori di picco scammando la gente.
 
-## Calcolare i decibel
+## 4. Calcolare i decibel
 
 Ricorda che con solo dei voltaggi non puoi sapere il volume SPL (per quello ti serve la resistenza che poi usi per calcolare la potenza e quindi il volume) ma con una differenza di voltaggi puoi ricavare l'aumento (diminuzione) dei decibel:
 ad esempio se aumento 2 volte il voltaggio so che avrò sicuramente un aumento di 6dB SPL del suono (non ho bisogno di conoscere la resistenza per dirlo).
@@ -90,7 +90,7 @@ Le formule precise sono queste:
 
 $ dB\ tra\ voltaggi = 20 * log_{10}(\frac{V_{2}}{V_1}) $
 
-## Frequenze
+## 5. Frequenze
 
 Si misurano in Hertz (`Hz`).
 Ogni nota ha la sua frequenza. Raddioppiando la frequenza la nota passa all'ottava superiore. Essendoci 12 note in un ottava, per ottenere la frequenza della nota successiva di una nota devo moltiplicare per $\sqrt[12]{2}$
@@ -98,7 +98,7 @@ Ogni nota ha la sua frequenza. Raddioppiando la frequenza la nota passa all'otta
 > [!NOTE]
 > overtones = harmonics = partials
 
-### Graphing Audio
+## 6. Graphing Audio
 
 Il volume (dB) è espresso linearmente e le frequenze sono espresse in modo logaritmico, infatti il grafico è un `semi-log`.
 Però, dato che in realtà i dB sono intrinsecamente logaritmici, se fossero espressi in volts allora sarebbero da esprimere logaritmicamente e quindi avrei un grafico log-log.
@@ -110,7 +110,7 @@ La stessa cosa tra 20 Hz - 200 Hz e 200 Hz - 2000Hz (ho moltiplicato x10 in entr
 
 ---
 
-## Filtri
+## 7. Filtri
 
 Un filtro audio è un dispositivo che selettivamente passa o sopprime un range di frequenze.
 Un filtro molto amato dagli audiofili è l'equalizzatore (anche se in generale sono più complessi dei filtri basic di cui sono composti).
@@ -143,7 +143,7 @@ AKSHUALLY Q viene da un calcolo abbastanza semplice spiegato nell'immagine sotto
 > a MiniMoog has a slope of 24 dB per octave; the sharp slope coupled with a
 > resonant peak at the cutoff frequency creates its characteristic sound.
 
-## Phase Shift and Time Delay
+## 8. Phase Shift and Time Delay
 
 AKSHUALLY esiste anche un altro tipo di filtro: il all-pass filter... ma che senso ha?
 Beh ecco, serve ad applicare dello sfasamento di fase (`phase shift`) (non cambia freq).
@@ -225,7 +225,7 @@ BTW È un fenomeno che si applica a moltissimi altri fenomeni fisici che coinvol
 
 ---
 
-## Fast Fourier Transform
+## 9. Fast Fourier Transform
 
 Joseph Fourier (1768-1830) mostrò che tutti i suoni possono essere rappresentati da una o più sine waves a diverse frequenze, ampiezze, durate e sfasamenti.
 Quindi, preso un suono, posso scomporlo in tutte le sue parti usando la trasformata di fourier veloce (`FFT`).
@@ -238,7 +238,7 @@ Ci sono dei picchi agli "odd-number harmonic distortion frequencies" of 3, 5, 7,
 Da notare anche la discesa a 0Hz sull'estrema sinistra del grafico che indica che la sound card ha introdotto anche un `DC offset`.
 Di solito puoi regolare la risoluzione della scomposizione di FFT. Si consiglia una alta risoluzione.
 
-## Seni, Onde Quadre e Pink Noise!
+## 10. Seni, Onde Quadre e Pink Noise!
 
 Anche le onde quadre e sawtooth possono essere riprodotte a partire da seni!
 
@@ -293,6 +293,30 @@ Questa distorsione funziona creando frequenze date per somma e differenza quando
 La distorsione è inevitabile in qualsiasi cirucito audio. Gli ingegneri mirano a limitare la distorsione e renderla in-udibile.
 
 ![IMD](./imd.png)
+
+### Noise
+
+Il noise contiene tutte le frequenze insieme. Ci sono diversi _flavors_ di noise.
+I più rilevanti nel mondo dell'audio sono il `pink noise` e il `white noise` (entrambi sono dei comuni audio per fare test).
+
+Il white noise ha la stessa quantità di energia per ogni frequenza, quindi quando lo scomponi con un FFT appare come una linea orizzontale. Ha la stessa quantità di energia (volume) in ogni range di Hz.
+Il pink noise è uguale solo che nelle frequenze alte decade a 3dB per ottava.
+
+Il pink noise anche è molto utilizzato per testare il gear perchè ha due vantaggi:
+* è meno irritante da sentire perchè ha meno frequenze alte e per lo stesso motivo è meno propenso a danneggiare i tweeters (altoparlanti per alte frequenze).
+* L'altro vantaggio è che contiene la stessa quantità di energia per ottava invece che per un numero fisso di Hz, che corrisponde a come sentono le nostre orecchie. Quindi l'ottava tra 1000Hz e 2000Hz contiene la stessa quantità di energia dell'ottava tra 100Hz e 200Hz.
+
+## Risonanza
+
+È un concetto importante nell'audio perchè spesso migliora la qualità percepita di strumenti musicali, ma peggiora la riproduzione quando avviene nei circuiti elettronici, altoparlanti e stanze dove ascolti.
+
+La risonanza meccanica avviene quando un oggetto con una massa finita è attaccato ad una molla o elastico (anche nei pendoli, e diapason).
+
+In ogni caso, quando viene applicata una forza sulla massa, questa inizia a muoversi, vibrando a una frequenza determinata dalla massa e la costante elastica della molla (in un pendolo la frequenza risonante dipende da _l_ e la forza di gravità).
+
+La frequenza risonante di un diapason dipende dalla sua massa (delle sue braccia) e dalla robustezza del materiale di cui è costituito.
+
+La frequenza risonante delle corde vocali di un cantante dipende dalla loro massa, lunghezza e tensione (che è controllata dal cantante).
 
 
 

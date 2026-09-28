@@ -318,7 +318,10 @@ La frequenza risonante di un diapason dipende dalla sua massa (delle sue braccia
 
 La frequenza risonante delle corde vocali di un cantante dipende dalla loro massa, lunghezza e tensione (che è controllata dal cantante).
 
+Un cugino della risonanza è lo smorzamento (`damping`) che è causato dall'attrito che converte energia cinetica in calore. Più smorzamento è applicato prima il moto si ferma.
 
+Tornando a parlare di audio: la risonanza si verifica in dispositivi meccanici come i driver degli altoparlanti e i diaframmi dei microfoni.
+Nel driver di uno speaker, la massa è il cono con la bobina ad esso attaccata, e la molla è la schiuma o gomma che sono interposti tra il cono e il telaio di metallo.
 
 
 

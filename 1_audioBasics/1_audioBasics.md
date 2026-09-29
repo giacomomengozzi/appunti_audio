@@ -321,8 +321,23 @@ La frequenza risonante delle corde vocali di un cantante dipende dalla loro mass
 Un cugino della risonanza è lo smorzamento (`damping`) che è causato dall'attrito che converte energia cinetica in calore. Più smorzamento è applicato prima il moto si ferma.
 
 Tornando a parlare di audio: la risonanza si verifica in dispositivi meccanici come i driver degli altoparlanti e i diaframmi dei microfoni.
-Nel driver di uno speaker, la massa è il cono con la bobina ad esso attaccata, e la molla è la schiuma o gomma che sono interposti tra il cono e il telaio di metallo.
+Nel driver di uno speaker, la massa è il cono (`cone`) con la bobina (`coil`) ad esso attaccata, e la molla è la schiuma o gomma che sono interposti tra gli spigoli interni ed esterni del cono e il telaio di metallo.
+La maggior parte degli strumenti musicali anche risuonano (resonate), ad esempio il legno dei violoncelli o delle chitarre acustiche.
+L'aria dentro le cavita' dentro gli strumenti musicali anche fa risonanza, come dentro un violino o un clarinetto. Con un violino le frequenze di risonanza sono sempre le stesse ma con un clarinetto o un flauto, la risonanza interna del corpo (_pipe_) dipende da che buchi chiudi con le dita.
 
+Un altro modo di vedere il damping e' attraverso la sua proprieta' opposta: Q. E' la stessa Q che si usa nei filtri e negli eq. Per esempio un asse di legno (tipo da costruzione) ha un basso Q perche' le sue fibre fanno molto attrito (friction). Quindi non fa un gran suono (frequenza risonante) e finisce prestissimo.
+Invece se prende un legno denso come l'ebano (che si usa per fare anche xilofoni o i legnetti (claves)) hanno molto meno attrito interno e quindi anche un Q molto piu' alto. Quindi il tono di uno xilofono o un marimba e' piu' definito e suona per piu' tempo, rendendolo piu' musicale.
+
+Anche le stanze (dove ascolti la musica) hanno una loro naturale frequenza di risonanza. Anche queste possono essere smorzate (damped) usando pannelli acustici per assorbire le vibrazioni risonanti. Quando il suono arriva nei pannelli l'attrito converte l'energia acustica in calore.
+Una stanza rettangolare ha 3 frequenze risonanti: una associata alla lunghezza, una alla larghezza e una all'altezza.
+Se applaudi in una piccola stanza completamente vuota, solitamente si sente un 'boing' chiamato `flutter echo`.
+Questo e' dato dal fatto che in una stanza completamente vuota niente impedisce al suono di rimbalzare continuamente tra due superfici opposte e quindi le onde sonore continuano a fare avanti indietro per anche qualche secondo.
+Le stanze hanno anche risonanza a basse frequenze ma con le mani non ce la fai. Vedremo piu' avanti col libro piu' in profondita'.
+
+#### Ci piace la risonanza?
+
+Nell'audio e' molto importante capire quando la si vuole e quando no.
+Negli strumenti musicali di solito la vogliamo e in alcuni addirittura e' fondamentale per farli suonare (violini, violoncelli, ...).
 
 
 

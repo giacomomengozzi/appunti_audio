@@ -1,6 +1,7 @@
 # Imparo un po' di audio
 
 Seguendo il libro "The Audio Expert" di Ethan Winer.
+Link per le risorse: `https://routledgetextbooks.com/textbooks/9780415788847/`
 
 ## Indice
 

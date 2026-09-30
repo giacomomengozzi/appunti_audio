@@ -322,25 +322,30 @@ Un cugino della risonanza è lo smorzamento (`damping`) che è causato dall'attr
 Tornando a parlare di audio: la risonanza si verifica in dispositivi meccanici come i driver degli altoparlanti e i diaframmi dei microfoni.
 Nel driver di uno speaker, la massa è il cono (`cone`) con la bobina (`coil`) ad esso attaccata, e la molla è la schiuma o gomma che sono interposti tra gli spigoli interni ed esterni del cono e il telaio di metallo.
 La maggior parte degli strumenti musicali anche risuonano (resonate), ad esempio il legno dei violoncelli o delle chitarre acustiche.
-L'aria dentro le cavita' dentro gli strumenti musicali anche fa risonanza, come dentro un violino o un clarinetto. Con un violino le frequenze di risonanza sono sempre le stesse ma con un clarinetto o un flauto, la risonanza interna del corpo (_pipe_) dipende da che buchi chiudi con le dita.
+L'aria dentro le cavità dentro gli strumenti musicali anche fa risonanza, come dentro un violino o un clarinetto. Con un violino le frequenze di risonanza sono sempre le stesse ma con un clarinetto o un flauto, la risonanza interna del corpo (_pipe_) dipende da che buchi chiudi con le dita.
 
-Un altro modo di vedere il damping e' attraverso la sua proprieta' opposta: Q. E' la stessa Q che si usa nei filtri e negli eq. Per esempio un asse di legno (tipo da costruzione) ha un basso Q perche' le sue fibre fanno molto attrito (friction). Quindi non fa un gran suono (frequenza risonante) e finisce prestissimo.
-Invece se prende un legno denso come l'ebano (che si usa per fare anche xilofoni o i legnetti (claves)) hanno molto meno attrito interno e quindi anche un Q molto piu' alto. Quindi il tono di uno xilofono o un marimba e' piu' definito e suona per piu' tempo, rendendolo piu' musicale.
+Un altro modo di vedere il damping è attraverso la sua proprietà opposta: Q. È la stessa Q che si usa nei filtri e negli eq.
+Per esempio un asse di legno (tipo da costruzione) ha un basso Q perche' le sue fibre fanno molto attrito (friction). Quindi non fa un gran suono (frequenza risonante) e finisce prestissimo.
+Invece se prende un legno denso come l'ebano (che si usa per fare anche xilofoni o i legnetti (claves)) hanno molto meno attrito interno e quindi anche un Q molto piu' alto.
+Quindi il tono di uno xilofono o un marimba è più definito e suona per più tempo, rendendolo più musicale.
 
-Anche le `stanze` (dove ascolti la musica) hanno una loro naturale frequenza di risonanza. Anche queste possono essere smorzate (damped) usando pannelli acustici per assorbire le vibrazioni risonanti. Quando il suono arriva nei pannelli l'attrito converte l'energia acustica in calore.
+Anche le `stanze` (dove ascolti la musica) hanno una loro naturale frequenza di risonanza.
+Anche queste possono essere smorzate (damped) usando pannelli acustici per assorbire le vibrazioni risonanti. Quando il suono arriva nei pannelli l'attrito converte l'energia acustica in calore.
 Una stanza rettangolare ha 3 frequenze risonanti: una associata alla lunghezza, una alla larghezza e una all'altezza.
 Se applaudi in una piccola stanza completamente vuota, solitamente si sente un 'boing' chiamato `flutter echo`.
 Questo e' dato dal fatto che in una stanza completamente vuota niente impedisce al suono di rimbalzare continuamente tra due superfici opposte e quindi le onde sonore continuano a fare avanti indietro per anche qualche secondo.
-Le stanze hanno anche risonanza a basse frequenze ma con le mani non ce la fai. Vedremo piu' avanti col libro piu' in profondita'.
+Le stanze hanno anche risonanza a basse frequenze ma con le mani non ce la fai. Vedremo più avanti col libro più in profondità.
 
 #### Ci piace la risonanza?
 
-Nell'audio e' molto importante capire quando la si vuole e quando no.
-Negli strumenti musicali di solito la vogliamo e in alcuni addirittura e' fondamentale per farli suonare (violini, violoncelli, ...).
-Ma, allo stesso tempo, la risonanza e' brutta quando si sente nel 'playback equipment' (diffusori, cuffie, ...) perche' nella frequency response aggiunge dei picchi in ogni frequenza risonante che continuano a sentirsi anche quando la cassa non suona.
+Nell'audio è molto importante capire quando la si vuole e quando no.
+Negli strumenti musicali di solito la vogliamo e in alcuni addirittura è fondamentale per farli suonare (violini, violoncelli, ...).
+Ma, allo stesso tempo, la risonanza è brutta quando si sente nel _playback equipment_ (diffusori, cuffie, ...) perchè nella frequency response aggiunge dei picchi in ogni frequenza risonante che continuano a sentirsi anche quando la cassa non suona.
 
-Come avevamo detto prima la risonanza si verifica anche nei driver degli speaker. La risonanza e' piu' accentuata nei driver piu' grandi (come i woofer) perche' hanno molta piu' massa di quelli piccoli e leggeri (tipo tweeter).
-Alcuni driver usano liquidi viscosi per raffreddare e aiutare a smorzare le vibrazioni ma un buon smorzamento e' dato anche dagli amplificatori che alimentano gli speaker. Lo smorzamento elettrico dei diffusori e' simile al meccanico ma sfrutta il magnetismo (spieghera' nel cap 23).
+Come avevamo detto prima la risonanza si verifica anche nei driver degli speaker.
+La risonanza è piu` accentuata nei driver più grandi (come i woofer) perchè hanno molta più massa di quelli piccoli e leggeri (tipo tweeter).
+Alcuni driver usano liquidi viscosi per raffreddare e aiutare a smorzare le vibrazioni ma un buon smorzamento è dato anche dagli amplificatori che alimentano gli speaker.
+Lo smorzamento elettrico dei diffusori è simile al meccanico ma sfrutta il magnetismo (spiegherà nel cap 23).
 
 ---
 
@@ -348,8 +353,8 @@ Alcuni driver usano liquidi viscosi per raffreddare e aiutare a smorzare le vibr
 
 "Low-cut" o "High-pass" (quando si tagliano le frequenze dei bassi)? Ethan preferisce Low Cut se si tagliano solo i bassi (sono entrambe corrette tecnicamente).
 Ci sono altri termini comuni che hanno molto meno senso: "warm", "cold”, “sterile”, “digital”, “forward”, “silky", ecc... Sono tutti soggettivi, non molto utili.
-Invece "meno 3dB a 200Hz" e' preciso e lascia molto meno all'interpretazione.
-Certo, "caldo" (warm) e "freddo" ti dicono le quantita' relative di alti e bassi tra di loro. Ma dire "gli alti sono un po' troppi" e' comunque preferibile secondo Ethan.
+Invece "meno 3dB a 200Hz" è preciso e lascia molto meno all'interpretazione.
+Certo, "caldo" (warm) e "freddo" ti dicono le quantità relative di alti e bassi tra di loro. Ma dire "gli alti sono un po' troppi" è comunque preferibile secondo Ethan.
 
 Ce ne sono un sacco di termini cosi' e sono tutti stupidi...
 C'e' la gente poi che dice che l'audio digitale e' incapace di registrare delle proprieta' specifiche della musica che sentono solo loro... (stronzate) tipo: "tonal texture", "transparency in the midrange", "bloom and openness", "substance" e l'"organic signature of instruments".

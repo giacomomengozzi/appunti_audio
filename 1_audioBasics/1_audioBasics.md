@@ -345,6 +345,12 @@ Alcuni driver usano liquidi viscosi per raffreddare e aiutare a smorzare le vibr
 
 ## Termini Audio
 
+"Low-cut" o "High-pass" (quando si tagliano le frequenze dei bassi)? Ethan preferisce Low Cut se si tagliano solo i bassi (sono entrambe corrette tecnicamente).
+Ci sono altri termini comuni che hanno molto meno senso: "warm", "cold”, “sterile”, “digital”, “forward”, “silky", ecc... Sono tutti soggettivi, non molto utili.
+Invece "meno 3dB a 200Hz" e' preciso e lascia molto meno all'interpretazione.
+Certo, "caldo" (warm) e "freddo" ti dicono le quantita' relative di alti e bassi tra di loro. Ma dire "gli alti sono un po' troppi" e' comunque preferibile secondo Ethan.
+
+
 
 
 

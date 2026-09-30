@@ -328,7 +328,7 @@ L'aria dentro le cavita' dentro gli strumenti musicali anche fa risonanza, come 
 Un altro modo di vedere il damping e' attraverso la sua proprieta' opposta: Q. E' la stessa Q che si usa nei filtri e negli eq. Per esempio un asse di legno (tipo da costruzione) ha un basso Q perche' le sue fibre fanno molto attrito (friction). Quindi non fa un gran suono (frequenza risonante) e finisce prestissimo.
 Invece se prende un legno denso come l'ebano (che si usa per fare anche xilofoni o i legnetti (claves)) hanno molto meno attrito interno e quindi anche un Q molto piu' alto. Quindi il tono di uno xilofono o un marimba e' piu' definito e suona per piu' tempo, rendendolo piu' musicale.
 
-Anche le stanze (dove ascolti la musica) hanno una loro naturale frequenza di risonanza. Anche queste possono essere smorzate (damped) usando pannelli acustici per assorbire le vibrazioni risonanti. Quando il suono arriva nei pannelli l'attrito converte l'energia acustica in calore.
+Anche le `stanze` (dove ascolti la musica) hanno una loro naturale frequenza di risonanza. Anche queste possono essere smorzate (damped) usando pannelli acustici per assorbire le vibrazioni risonanti. Quando il suono arriva nei pannelli l'attrito converte l'energia acustica in calore.
 Una stanza rettangolare ha 3 frequenze risonanti: una associata alla lunghezza, una alla larghezza e una all'altezza.
 Se applaudi in una piccola stanza completamente vuota, solitamente si sente un 'boing' chiamato `flutter echo`.
 Questo e' dato dal fatto che in una stanza completamente vuota niente impedisce al suono di rimbalzare continuamente tra due superfici opposte e quindi le onde sonore continuano a fare avanti indietro per anche qualche secondo.
@@ -338,6 +338,15 @@ Le stanze hanno anche risonanza a basse frequenze ma con le mani non ce la fai. 
 
 Nell'audio e' molto importante capire quando la si vuole e quando no.
 Negli strumenti musicali di solito la vogliamo e in alcuni addirittura e' fondamentale per farli suonare (violini, violoncelli, ...).
+Ma, allo stesso tempo, la risonanza e' brutta quando si sente nel 'playback equipment' (diffusori, cuffie, ...) perche' nella frequency response aggiunge dei picchi in ogni frequenza risonante che continuano a sentirsi anche quando la cassa non suona.
+
+Come avevamo detto prima la risonanza si verifica anche nei driver degli speaker. La risonanza e' piu' accentuata nei driver piu' grandi (come i woofer) perche' hanno molta piu' massa di quelli piccoli e leggeri (tipo tweeter).
+Alcuni driver usano liquidi viscosi per raffreddare e aiutare a smorzare le vibrazioni ma un buon smorzamento e' dato anche dagli amplificatori che alimentano gli speaker. Lo smorzamento elettrico dei diffusori e' simile al meccanico ma sfrutta il magnetismo (spieghera' nel cap 23).
+
+## Termini Audio
+
+
+
 
 
 

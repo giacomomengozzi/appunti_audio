@@ -18,4 +18,5 @@ Link per le risorse: `https://routledgetextbooks.com/textbooks/9780415788847/`
 9. FFT
 10. Seni, onde quadre e pink noise (distorsione)
 11. Risonanza
-
+12. Termini Audio (ciarlatani)
+13. Null Test

@@ -3,8 +3,7 @@ Parliamo di cose oggettive, numeri!
 
 ## 1. Volume e decibels
 
-Il volume di una canzone (un suono) o sound pressure level (SPL) si misura in `decibel`.
-Si misura quindi un cambiamento della pressione dell'aria che si propaga fino ai timpani, facendoli vibrare.
+Il volume di una canzone (un suono) o sound pressure level (SPL) si misura in `decibel`. Si misura quindi un cambiamento della pressione dell'aria che si propaga fino ai timpani, facendoli vibrare.
 
 Per definizione il decibel esprime un `rapporto` tra due SPL ma in pratica puo' anche rappresentare un volume assoluto. In questo caso esiste una reference implicita a 0dB (il suono piu' piano che il nostro orecchio puo' sentire (threshold of hearing)).
 
@@ -343,6 +342,8 @@ Ma, allo stesso tempo, la risonanza e' brutta quando si sente nel 'playback equi
 Come avevamo detto prima la risonanza si verifica anche nei driver degli speaker. La risonanza e' piu' accentuata nei driver piu' grandi (come i woofer) perche' hanno molta piu' massa di quelli piccoli e leggeri (tipo tweeter).
 Alcuni driver usano liquidi viscosi per raffreddare e aiutare a smorzare le vibrazioni ma un buon smorzamento e' dato anche dagli amplificatori che alimentano gli speaker. Lo smorzamento elettrico dei diffusori e' simile al meccanico ma sfrutta il magnetismo (spieghera' nel cap 23).
 
+---
+
 ## Termini Audio
 
 "Low-cut" o "High-pass" (quando si tagliano le frequenze dei bassi)? Ethan preferisce Low Cut se si tagliano solo i bassi (sono entrambe corrette tecnicamente).
@@ -350,9 +351,30 @@ Ci sono altri termini comuni che hanno molto meno senso: "warm", "cold”, “st
 Invece "meno 3dB a 200Hz" e' preciso e lascia molto meno all'interpretazione.
 Certo, "caldo" (warm) e "freddo" ti dicono le quantita' relative di alti e bassi tra di loro. Ma dire "gli alti sono un po' troppi" e' comunque preferibile secondo Ethan.
 
+Ce ne sono un sacco di termini cosi' e sono tutti stupidi...
+C'e' la gente poi che dice che l'audio digitale e' incapace di registrare delle proprieta' specifiche della musica che sentono solo loro... (stronzate) tipo: "tonal texture", "transparency in the midrange", "bloom and openness", "substance" e l'"organic signature of instruments".
 
+Per questa gente qua ci vorrebbe un bel
 
+## Null Test
 
+Come fai a sfatare le stronz*** che dice la gente? Ecco lo strumento.
 
+Spesso si usano anche i `blind tests` nell'audio.
+Sono comunque molto validi perche' a volte non importa se veramente un amp introduce un po' di distorsione in piu'... se tanto non la senti, che te frega?
+Pero' i blind tests non sono davvero conclusivi, infatti anche se tu non senti alcuna differenza, chi ti dice che non c'e' veramente?
+E' anche possibile che anche se quasi nessuno senta nessuna differenza nello stesso blind test, qualcuno che la noti veramente esista.
+E poi per rispondere a sti ciarlatani che dicono di sentirla anche quando sei sicuro che non ci sia come fai a dimostrarlo?
+C'e' pure della gente che dice che i blind test sono "fundamentally flawed" (intrinsecamente imperfetti) perche' dicono che con la pressione psicologica aggiunta da un blind test non noti le differenze che noteresti con un ascolto totalmente rilassato.
+E comunque se le differenze sono cosi' piccole, importano veramente?
 
+Ecco che arriva il Null Test inconfutabile:
+Per effettuare un Null Test si sottraggono due segnali audio tra di loro per vedere cio' che rimane.
+Se non rimane nessuna frequenza allora i segnali sono per definizione `identici`.
+Se qualcuno dice che dal suo lettore cd si sente meglio che dal tuo un null test di dira' con certezza se e' vero.
+
+La sottrazione si fa invertendo la polarity da una delle due sorgenti e mixandola con l'altra allo stesso volume.
+Se il risultato e' silenzio totale (vedendolo con un VU meter) allora le sorgenti sono identiche.
+Invece se rimane qualcosa puoi analizzare le differenze a orecchio o anche con un analisi FFT.
+Ad esempio se una sorgente aggiunge una 3rd harmonic piu' forte in un test con un seno a 100Hz allora il null test mostrera' solo quella differenza.
 

@@ -1,5 +1,8 @@
 # Iniziamo il secondo capitolo
 
+Pagina wikipedia utile:
+`https://en.wikipedia.org/wiki/Audio_system_measurements`
+
 ## Hi-Fi
 
 Per definizione "high fidelty" (`Hi-Fi`) significa riprodurre un suono il più simile possibile al vero (quindi c'è una copia e una sorgente del suono).

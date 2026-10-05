@@ -20,3 +20,8 @@ Link per le risorse: `https://routledgetextbooks.com/textbooks/9780415788847/`
 11. Risonanza
 12. Termini Audio (ciarlatani)
 13. Null Test
+
+### 2 Audio Fidelty (Measurements and Myths)
+
+1. High Fidelty defined
+2. I 4 parametri

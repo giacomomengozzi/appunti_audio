@@ -25,3 +25,5 @@ Link per le risorse: `https://routledgetextbooks.com/textbooks/9780415788847/`
 
 1. High Fidelty defined
 2. I 4 parametri
+3. Bufale
+4. Strumentazione per test

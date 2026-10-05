@@ -18,13 +18,13 @@ Sono più che altro categorie di parametri.
 
 ### Noise
 
-E' l'hiss di sottofondo (suono "ssssss") che senti quando alzi il volume in un amp, o un receiver (dispositivo che fa da hub tra input e output diversi).
-Si puo' sentire di solito quando ascolti delle cassette coi nastri nei passaggi molto silenziosi.
+È l'hiss di sottofondo (suono "ssssss") che senti quando alzi il volume in un amp, o un receiver (dispositivo che fa da hub tra input e output diversi).
+Si può sentire di solito quando ascolti delle cassette coi nastri nei passaggi molto silenziosi.
 
-Un cugino vicino e' il `dynamic range`. E' la differenza in dB tra l'hiss di sottofondo residuo e i volumi piu' alti raggiungibili senza distorsione.
+Un cugino vicino è il `dynamic range`. È la differenza in dB tra l'hiss di sottofondo residuo e i volumi più alti raggiungibili senza distorsione.
 I CD e i DVD hanno un grandissimo dynamic range, quindi se quando ne ascolti uno senti dell'hiss significa che viene dal nastro master originale della registrazione (per registrazioni vecchie immagino). Potrebbe essere stato aggiunto durante la produzione o era nella stanza di registrazione e i microfoni l'hanno catturato.
 
-Dei sottoinsiemi del noise sono gli hummm e i buzzz dati dalla corrente alternata, i click e i pops dei vinili, _electronic crackling_, _left-right channel bleed-throug (cross-talk)_, porte e finestre che vibrano quando si ascolta ad alto volume, e l'effetto triboelettrico dei cavi (succede quando maneggi cavi rovinati o di pessima qualita' (oggi e' molto raro)).
+Dei sottoinsiemi del noise sono gli hummm e i buzzz dati dalla corrente alternata, i click e i pops dei vinili, _electronic crackling_, _left-right channel bleed-throug (cross-talk)_, porte e finestre che vibrano quando si ascolta ad alto volume, e l'effetto triboelettrico dei cavi (succede quando maneggi cavi rovinati o di pessima qualità (oggi è molto raro)).
 
 ### Frequency response
 
@@ -37,8 +37,82 @@ Sottoinsiemi del frequency response sono _physical microphonics_ (risonanza mecc
 
 ### Distorsione
 
-E' un modo piu' semplice per dire `nonlinearita'`. Aggiunge nuove frequenze che non erano presenti nella sorgente originale.
-Negli amplificatori cio' succede quando il circuito amplifica alcuni voltaggi piu' o meno di altri.
+È un modo più semplice per dire `nonlinearità`. Aggiunge nuove frequenze che non erano presenti nella sorgente originale.
+Negli amplificatori ciò succede quando il circuito amplifica alcuni voltaggi più o meno di altri.
 
+Questa nonlinearità può appiattire i picchi delle onde (è una compressione che avviene quando metti al massimo volume l'amp e quindi i driver), oppure può shiftare un po' nello 'zero' dove i voltaggi passano dal positivo al negativo (`crossover distorsion`).
+
+![Distorsione (nonlinearità)`](./distorsion.png)
+
+Alcuni circuiti comprimono i picchi superiori più dei picchi inferiori (o vice versa), in questo caso la distorsione non è simmetrica e si formano armoniche pari e dispari (seconda, terza, quarta, quinta e così via).
+Altri invece comprimono i picchi allo stesso modo (simmetricamente). Si aggiungono armoniche dispari: terza, quinta, settima e così via.
+
+Invece la crossover distorsion avviene solo per alcuni tipi di amplificatori (ricorda quel video di headphones.com).
+
+Come abbiamo già detto un po' di distorsione è inevitabile, si può mitigare progettando dispositivi con distorsione così bassa da essere inudibile.
+C'è pure gente a cui piacciono particolari tipi di distorsione.
+La preferenza di Ethan è di avere dispositivi il più _trasparenti_ possibile.
+
+I due tipi di distorsione di base sono la distorsione `armonica` e `intermodulare`, entrambe sono sempre presenti insieme.
+
+La distorsione armonica aggiunge nuove frequenze che sono relative alla sorgente (possono anche suonare abbastanza bene).
+Ignorando gli _overtones_ che sono già presenti di base, se prendiamo un La di un basso acustico con fondamentale a 110Hz, la distorsione armonica aggiunge nuove frequenze a 220Hz, 330Hz, 440Hz e così via.
+Alcuni dispositivi come già detto aggiungono più armoniche pari che dispari.
+La distorsione armonica aggiunge una "thick" o "buzzy" qualità alla musica.
+Gli strumenti musicali hanno già armoniche proprie, quindi un dispositivo che aggiunge armoniche per distorsione cambia il timbro dello strumento di una qualche quantità.
+I chitarristi elettrici usano la distorsione armonica (anche tantissima) per creare un suono potente e sostenuto.
+
+La distorsione intermodulare (IMD) si verifica quando 2 o più frequenze sono presenti.
+È molto meno voluta questa perchè aggiunge frequenze che non c'entrano un fico secco con quelle originali.
+Ne avevamo già parlato, aggiunge frequenze relative alle somme e differenze delle originali.
+Anche in piccole quantità l'IMD aggiunge una qualità dissonante che può essere anche parecchio spiacevole alle orecchie.
+In più, quando l'IMD è presente in suoni di strumenti musicali, dove le armoniche ci sono già, anche queste partecipano all'IMD...
+
+Un altro tipo di distorsione è l'`aliasing` che è unico all'audio digitale.
+Funziona come l'IMD, infatti è molto irritante. Fortunatamente con i dispositivi digitali moderni è assolutamente impercettibile.
+
+Poi c'è la `Transient intermodulation distorsion` (TDM) che avviene solo nei `transienti` (suoni che aumentano velocemente di volume, come snares, piatti, e altre percussioni).
+Questo tipo di distorsione non si rileva con un test standard di un seno a 1kHz ma si vede facilmente attraverso un'oscilloscopio connesso all'output del dispositivo da testare quando si usa un segnale test con pulse waves.
+È anche rilevabile con il Null Test (passando suoni con transienti).
+Negli Amp moderni di solito non si sente per niente.
+
+### Time Based Errors (errori basati sul tempo)
+
+Sono quelli che modificano il pitch e il tempo.
+Quando suoni un vinile che non è perfettamente centrato, si sente il pitch che ad ogni rivoluzione si alza e si abbassa. Questo è il `wow`.
+L'instabilità del pitch di un analog tape recorder invece è detto `flutter`. Questo aggiunge un "warbling effect".
+I registratori digitali hanno il `jitter`, ma le modifiche ai pitch sono così istantanee che diventano rumore (noise) aggiunto. Nei dispositivi moderni è impercettibile.
+Poi c'è il `phase shift` ma anche questo è inudibile (a parte se non è presente in quantità diverse tra i canali destro e sinistro, in tal caso è terribile (aggiunge un sacco di stereo)).
+
+---
+
+Anche l'acustica di una stanza potrebbe essere considerato un parametro audio, ma non lo è veramente.
+Aggiungono echo, riverbero e risonanza e anche effetto pettine se non trattate.
+Nel contesto dell'acustica, la risonanza è spesso chiamata 'modal ringing' nelle frequenze basse, 'flutter echo' nei medi e alti.
+
+Un altro aspetto della qualità dei dispositivi è il `channel imbalance` in cui i canali destro e sinistro vengono amplificati in quantità diverse (che merd).
+È un difetto di manifattura più che un difetto audio. Non è considerato un parametro perchè non influisce sulla qualità in se.
+
+Con i 4 parametri di prima hai TUTTO quello che ti serve per conoscere la _fedeltà_ di un dispositivo audio.
+Se il dispositivo ha noise e distorsione troppo leggere per sentirsi, con una frequency response sufficientemente uniforme e errori di tempo troppo piccoli da notare allora quel dispositivo è `acusticamente trasparente` all'audio che ci passa attraverso.
+L'importante è che non si sentano all'orecchio, anche se con un Null Test si rileva qualcosa.
+
+Anche la risonanza non è proprio un parametro audio ma una proprietà.
+
+Senza dubbio comunque la stanza in cui ascolti influenza la qualità del suono più che un qualsiasi dispositivo elettronico audio.
+Comunque, il punto è che con questi 4 parametri puoi constatare la qualità di amplificatori, preamplificatori, sound cards, diffusori, microfoni e tanto altro.
+
+## Le Bufale Audio
+
+Bastano quei 4 parametri, il resto è marketing...
+A volte i produttori poco seri fanno vedere i grafici della frequency response con lo `smoothing` (o `averaging`).
+In questo modo smussano il grafico facendone perdere i dettagli (spesso molto importanti).
+![Senza smoothing](./nosmoothing.png)
+![Con smoothing](./smoothing.png)
+
+Un altro trick che usano è usare una scala molto grande sulle y così le variazioni di volume sembrano minime... dai non ci puoi cascare.
+![Bastardi maledetti](./scalay.png)
+
+## Strumentazione di Testing
 
 

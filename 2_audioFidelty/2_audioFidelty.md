@@ -115,4 +115,6 @@ Un altro trick che usano è usare una scala molto grande sulle y così le variaz
 
 ## Strumentazione di Testing
 
+Per le misurazioni del noise si fa abbastanza facilmente con un `voltimetro`. Il voltmetro pero' deve avere una risposta di frequenza piatta su tutto il range acustico (molti modelli budget non sono accurati sopra i 5/10kHz).
+Per fare questa misurazione, un amplificatore (o altri dispositivi) vengono accesi ma senza un segnale di input
 

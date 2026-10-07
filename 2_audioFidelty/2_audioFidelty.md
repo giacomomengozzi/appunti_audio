@@ -115,6 +115,43 @@ Un altro trick che usano è usare una scala molto grande sulle y così le variaz
 
 ## Strumentazione di Testing
 
-Per le misurazioni del noise si fa abbastanza facilmente con un `voltimetro`. Il voltmetro pero' deve avere una risposta di frequenza piatta su tutto il range acustico (molti modelli budget non sono accurati sopra i 5/10kHz).
-Per fare questa misurazione, un amplificatore (o altri dispositivi) vengono accesi ma senza un segnale di input
+Per le misurazioni del noise si fa abbastanza facilmente con un `voltimetro`.
+Il voltmetro pero' deve avere una risposta di frequenza piatta su tutto il range acustico (molti modelli budget non sono accurati sopra i 5/10kHz).
+Per fare questa misurazione, un amplificatore (o altri dispositivi) vengono accesi ma senza un segnale di input e viene misurato il voltaggio residuo all'output.
+Di solito vengono connessi un resistore o un corto circuito in input per simulare una sorgente audio. Senza, potrebbe entrare hiss o hum in input e venire amplificati ingiustamente.
+Negli amplificatori con il controllo del volume devi anche segnarti a che livello era quando hai fatto il test.
 
+Per quanto possa essere semplice misurare la quantità di noise introdotta da un dispositivo audio, quello che viene misurato non significa che venga sentito così.
+Infatti le nostre orecchie sono meno sensibili alle frequenze basse e alte rispetto alle medie, e sono specialmente sensibili alle frequenze tra i 2 e i 3 kHz.
+Quindi noise a quelle frequenze è molto più grave di quello ad alte frequenze o basse. Per questo motivo alle misurazioni si applica anche il `weighting`!
+Così le frequenze medie hanno più importanza rispetto alle altre. La curva di weighting è la `A-weighting curve` che corrisponde alle frequenze che sentiamo quando si ascolta a medio - basso volume (a volume alto sentiamo tutte le frequenze in egual modo).
+![A-weighting curve](./Aweighting.png)
+
+Per misurare la distorsione, invece, in passato si usava un analizzatore dedicato.
+Questo mandava una sine wave ad una singola frequenza con armoniche e noise minimo.
+Dopodiché veniva applicato un notch filter per rimuovere il seno fondamentale.
+Infine viene applicato un voltimetro all'output e quello che rileva e' distorsione (e noise).
+
+L'IMD invece viene misurata allo stesso modo solo introducendo 2 seni invece che uno solo.
+Ci sono 2 metodi standard che differiscono per le frequenze dei 2 seni:
+* metodo 1: mandi in input 60Hz e 7khz con i 60Hz 4 volte più rumorosi dei 7kHz;
+* metodo 2: 19kHz e 20kHz allo stesso volume.
+
+Analizzatori audio moderni (costano un sacco, l'Audio Precision APx525 era a 13k su ebay) sono molto sofisticati e possono misurare molto più che freq response, noise, e distorione.
+Sono anche immuni al `masking` ossia l'effetto per cui se ci sono suoni ad alto volume e altri molto alti, gli alti mascherano completamente i bassi e non li senti per niente.
+Questi dispositivi possono fare misurazioni precisissime ma anche con un semplice computer si può fare moltissimo.
+Per esempio se voglio misurare la distorsione di una sound card un po' cheap posso creare un seno puro su un DAW e poi metterlo in output su una sound card che so essere di ottima qualità con bassa distorsione.
+Poi mandi il segnale alla sound card cheap e lo registri in output. Esegui poi una FFT dal computer e hai fatto!
+
+Di solito la distorsione negli amplificatori (e tutti i dispositivi che contengono trasformatori) aumenta quando si aumenta il volume.
+È più facile avere poca distorsione 1kHz rispetto che 30Hz, infatti le frequenze più basse sono quelle 
+
+> [!NOTE] Presa in più da wikipedia
+> THD sta per `total harmonic distorsion` ed è il rapporto degli RMS sommati di tutte le frequenze armoniche introdotte dalla distorsione fratto l'RMS della fondamentale.
+> Ad oggi accade spesso che distorsione armonica, noise e hum vengano tutti aggiunti alla THD (THD+N (Noise)).
+> Quindi per esempio se un amplificatore aggiunge l'1% di distorsione
+
+> [!NOTE]
+> La distorsione sopra a fondamentali di 10kHz è irrilevante perchè le armoniche sono sopra a 20kHz.
+
+Molti produttori pubblicano specifiche con THD misurata a 1kHz, spesso a volumi molto sotto l'output massimo... BASTARDI FURBONI.

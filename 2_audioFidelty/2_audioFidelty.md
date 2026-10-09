@@ -144,14 +144,28 @@ Per esempio se voglio misurare la distorsione di una sound card un po' cheap pos
 Poi mandi il segnale alla sound card cheap e lo registri in output. Esegui poi una FFT dal computer e hai fatto!
 
 Di solito la distorsione negli amplificatori (e tutti i dispositivi che contengono trasformatori) aumenta quando si aumenta il volume.
-È più facile avere poca distorsione 1kHz rispetto che 30Hz, infatti le frequenze più basse sono quelle 
+È più facile avere poca distorsione 1kHz rispetto che 30Hz, perchè a 1kHz molti amplificatori sono progettati per lavorare benissimo mentre a 30Hz alcuni dispositivi, specialmente quelli con trasformatori, hanno una maggiore nonlinearità.
 
 > [!NOTE] Presa in più da wikipedia
-> THD sta per `total harmonic distorsion` ed è il rapporto degli RMS sommati di tutte le frequenze armoniche introdotte dalla distorsione fratto l'RMS della fondamentale.
-> Ad oggi accade spesso che distorsione armonica, noise e hum vengano tutti aggiunti alla THD (THD+N (Noise)).
-> Quindi per esempio se un amplificatore aggiunge l'1% di distorsione
+> THD sta per `total harmonic distorsion` ed è il rapporto degli RMS sommati di tutte le frequenze armoniche (quindi non IMD!) introdotte dalla distorsione fratto l'RMS della fondamentale.
+> Ad oggi accade spesso che distorsione armonica, noise e hum vengano tutti infilati nella THD (ottengo THD+N (Noise)).
+> Questo dato si trova facendo un Null Test praticamente anche se veramente si preferisce fare togliendo il seno di prova con un notch filter (è più semplice)
+> È dichiarata come una percentuale (o un numero) di dB sotto al massimo livello di output.
+> Quindi per esempio se un amplificatore aggiunge l'1% di distorsione, si può dire che la distorsione resta 40dB sotto il segnale originale (1/100=40dB).
+> Di solito si applica anche l'A-weighting a questo dato (fairly so).
 
 > [!NOTE]
 > La distorsione sopra a fondamentali di 10kHz è irrilevante perchè le armoniche sono sopra a 20kHz.
+> > [!WARNING]
+> > Questo non significa che non sia pericolosa anche ad alte frequenze infatti:
+> > Se la distorsione è abbastanza forte si può avere distorsione IM che per le differenze può benissimo essere anche nei range di frequenze importanti.
 
-Molti produttori pubblicano specifiche con THD misurata a 1kHz, spesso a volumi molto sotto l'output massimo... BASTARDI FURBONI.
+Molti produttori pubblicano specifiche con THD misurata a 1kHz, spesso a volumi molto sotto l'output massimo... BASTARDI FURBONI. (infatti come già detto prima i dispositivi di solito sono progettati per andare bene nelle frequenze più importanti e spesso le altre possono essere un po' così così, e poi oltre a questo a volumi bassi c'è molta meno distorsione)
+
+## Audio Transparency
+
+Il motivo principale per cui facciamo queste misurazioni all'audio è per capire se un dispositivo è _trasparente_ alla musica che gli passa attraverso.
+Quindi se riporta fedelmente i dati musicali (o abbastanza fedelmente che non si nota).
+
+
+

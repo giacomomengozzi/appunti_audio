@@ -148,7 +148,7 @@ Di solito la distorsione negli amplificatori (e tutti i dispositivi che contengo
 
 > [!NOTE] Presa in più da wikipedia
 > THD sta per `total harmonic distorsion` ed è il rapporto degli RMS sommati di tutte le frequenze armoniche (quindi non IMD!) introdotte dalla distorsione fratto l'RMS della fondamentale.
-> Ad oggi accade spesso che distorsione armonica, noise e hum vengano tutti infilati nella THD (ottengo THD+N (Noise)).
+> Ad oggi accade spesso che distorsione armonica, noise (hum?) vengano tutti infilati nella THD (ottengo THD+N (Noise)).
 > Questo dato si trova facendo un Null Test praticamente anche se veramente si preferisce fare togliendo il seno di prova con un notch filter (è più semplice)
 > È dichiarata come una percentuale (o un numero) di dB sotto al massimo livello di output.
 > Quindi per esempio se un amplificatore aggiunge l'1% di distorsione, si può dire che la distorsione resta 40dB sotto il segnale originale (1/100=40dB).
@@ -167,5 +167,22 @@ Molti produttori pubblicano specifiche con THD misurata a 1kHz, spesso a volumi 
 Il motivo principale per cui facciamo queste misurazioni all'audio è per capire se un dispositivo è _trasparente_ alla musica che gli passa attraverso.
 Quindi se riporta fedelmente i dati musicali (o abbastanza fedelmente che non si nota).
 
+Niente di che, dice che in Asia oggi si danno ottimi dispositivi a buon mercato (una volta era difficilissimo farli).
 
+Le mode cambiano: una volta andava di moda fare dispositivi con la freq response più piatta possibile, oggi invece spesso ci si vanta di dispositivi con un "colore" unico...
+    Una volta l'eq (e altri dispositivi) erano usati solo per piccole correzioni e per mixare bene, oggi spesso usati anche proprio come effetto creativo.
+
+## Miti Audio
+
+Ora che sai cosa e come misurare e un null test può provare le nostre misurazioni possiamo sfatare un po' di miti.
+Scarrellata:
+* Cavi fancy per collegare i diffusori...
+* _Bi-wiring_ (il _bi-amping_ è legit invece: un amp per le freq alte e uno per i mid e high (le devi splittare ovviamente). Eviti di fare _crossovers_ che dissipano potenza in calore e aggiungono distorsione), semplicemente invece che attaccare gli speaker all'amp con 1 cavo li attacchi con 2 cavi... scemi;
+* _Cable elevators_ che impediscono ai cavi di stare appoggiati al pavimento... c'è chi pensa che la vibrazione meccanica di quando colpisci un cavo aggiunga distorsione... si commentano da soli. Ha senso isolare meccanicamente gli speaker semmai... per prevenire risonanze (vibrazioni) con le superfici a cui sono appoggiati.
+* _Power conditioners_: prodotti che dovrebbero addomesticare il rumore delle spine elettriche. Ogni singolo circuito elettrico ha già delle misure per contrastare;
+* _Cavi USB fancy_... bruh è digitale...
+* _Analogico vs digitale_: l'analogico (vinili, tubi, ...) aggiunge distorsioni (`euphonic distorsion`) che spesso possono piacere ma non venirmi a dire che sono più fedeli (trasparenti). A volte la distorsione fa sembrare che la qualità sia migliore. Infatti a volte si aggiungono apposta questi effetti "analogici" all'audio originale per motivi creativi. Ma appunto sono effetti.
+* _Roba per il room treatment che non dà molto nell'occhio_: cercano di venderti robette per aggiustare il suono di una stanza quando in realtà ti servono pannelli grandi... tanto a me piace il look ;)
+* _Broke in_: devi usare per un po' di tempo i dispositivi elettronici prima che raggiungano la loro forma migliore. Per gli elettronici sono bufale, per dispositivi come cuffie e diffusori (Burning) è plausibile che il suono cambi di pochissimo (scettico).
+* _Stacking_
 
